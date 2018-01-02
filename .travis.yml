@@ -9,7 +9,7 @@ env:
   - secure: nxaaplwmN5WpOO6Y/PwBJPF1V0SH6H+IUyVVSSdUmRURMhf2b9jLAp5YO68B7IAvHL78yovlyqkyZI2O/vkHlGjexl08hFcyuvFwZpEMlG4m4dr6h/CXb9HQr9ObbrYzFHqAOJ0A6WouGzzQW4ei0RYfaK4gVdv5V+qOvPpnbdK4eI+THOI72ul3OVTp52aTVNtdctbbHjvQRae+wvDcDGXDfdaXws2zcIbggHEoRBsylVWh5EBn4eOzj/dXsy/0/aav9ikQoZhoQZKjeeO53iBE5zSGjQsloS0EIYOxV03nU4nVtnrFq+GQ3PK55ILqRbtnjEnK+Yjy9/QTDRo5W+XAT27Tyub3c1dZy5n6ajOKBO8vmLdfcsVWtV0qG1l3bC5NXxuju9cha72AmsZ652+gTjprhlYMR1PsFRz+UBv5iCSSkBrOl366Ef4rdS3rCC67RSH5Pvxatafuofnaq0P1uzrxESp5ywN40ezoKLZvn2X9p7bA41gv/peanw5G+ZE+utrAa//2qUAeLJRweWqTiDQQSzm0JaajsMesIH8kRu+wrhQiQZOdhDJ40+3T/A5vRz16n5tsTIgEaFsnDvLge/VQ7hUBTTvJwG2mpaecUx1BqsH7mSk4LORzOBuhETSrcusV8G9pZOY0flWdQJcVa0owky9iI2kZmoUtomQ=
 script:
 - ls -alh
-- docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+- docker login -u $DOCKER_USER -p $DOCKER_PASS
 - export REPO=netsyos/nodejs-nginx
 - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH;
   fi`
